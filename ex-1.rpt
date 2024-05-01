@@ -1,0 +1,304 @@
+﻿F22 PROG8080 Section 3
+Exercise 1
+ 
+Rutvik Gandhi
+ 
+Jan 16 2023  1:42PM
+ 
+List the columns of the Terms table in the AP database.
+ 
+TermsID     TermsDescription                                   TermsDueDays
+----------- -------------------------------------------------- ------------
+1           Net due 10 days                                    10
+2           Net due 20 days                                    20
+3           Net due 30 days                                    30
+4           Net due 60 days                                    60
+5           Net due 90 days                                    90
+
+(5 rows affected)
+
+List the ‘state code’ vendors are from, but show each ‘state code’ only once
+(i.e., no duplicates). List the results in descending order.
+ 
+state code
+--------------------
+95887
+95827
+95380
+94294
+94257
+94244
+94230
+94208
+94161
+94160
+94152
+93888
+93792
+93786
+93777
+93745
+93728
+93727
+93726
+93722
+93721
+93720
+93718
+93715
+93714
+93711
+93710
+93706
+93704
+93703
+93662
+93101
+93031
+92850
+92807
+92704
+92691
+92621
+92186
+91355
+91186
+91185
+91109
+90312
+90266
+90247
+90096
+90084
+90074
+90038
+90025
+89163
+88905
+85062
+85038
+85023
+75284
+66061
+63177
+63105
+60694
+60680
+60197
+55439
+53707
+52556
+52353
+49684
+48326
+48106
+45264
+45225
+45002
+44074
+43305
+43260
+43221
+38101
+32231
+28217
+22101
+20559
+20090
+20006
+19170
+19034
+10802
+10591
+10010
+08816
+08810
+07882
+07004
+06484
+02206
+02134
+02107
+
+(97 rows affected)
+
+Display all the columns of vendors from Texas. You must use ‘TX’ as part of
+your solution.
+ 
+VendorID    VendorName                                         VendorAddress1                                     VendorAddress2                                     VendorCity                                         VendorState VendorZipCode        VendorPhone                                        VendorContactLName                                 VendorContactFName                                 DefaultTermsID DefaultAccountNo
+----------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- ----------- -------------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- -------------- ----------------
+83          Ingram                                             PO Box 845361                                      NULL                                               Dallas                                             TX          75284                NULL                                               Yobani                                             Trey                                               2              541
+
+(1 row affected)
+
+List all the columns of invoices with a Vendor ID of 83. Do not include single
+quotes (‘) or double quotes (“) as part of your solution.
+ 
+InvoiceID   VendorID    InvoiceNumber                                      InvoiceDate InvoiceTotal          PaymentTotal          CreditTotal           TermsID     InvoiceDueDate PaymentDate
+----------- ----------- -------------------------------------------------- ----------- --------------------- --------------------- --------------------- ----------- -------------- -----------
+47          83          31359783                                           2019-12-03  1575.00               1575.00               0.00                  2           2019-12-23     2019-12-21
+98          83          31361833                                           2020-01-21  579.42                0.00                  0.00                  2           2020-02-10     NULL
+
+(2 rows affected)
+
+List the 5 columns (Invoice ID, Vendor ID, Invoice Total, Credit Total and
+Payment Total) for invoices with Invoice ID of 17.
+ 
+InvoiceID   VendorID    InvoiceTotal          CreditTotal           PaymentTotal
+----------- ----------- --------------------- --------------------- ---------------------
+17          123         10.00                 0.00                  10.00
+
+(1 row affected)
+
+List the 4 columns (Vendor ID, Vendor Name, Default Terms ID and a string
+expression that includes Vendor City, Vendor State and Vendor Zip Code
+separates by commas) for vendors with a Vendor ID of 123. Do not assign
+an alias for the string expression (i.e., no column name).
+ 
+VendorID    VendorName                                         DefaultTermsID VendorZipCode
+----------- -------------------------------------------------- -------------- ------------------------------------------------------------------------------
+123         Federal Express Corporation                        3              Memphis , TN , 38101
+
+(1 row affected)
+
+Are there any outstanding invoices (i.e., unpaid invoices) for Vendor ID 123?
+List the 7 columns (Vendor ID, Terms ID, Invoice ID, Invoice Total, Credit
+Total, Payment Total and an arithmetic expression for “Balance Due”
+calculated as ‘Invoice Amount minus Credit Amount minus Payment
+Amount’) for invoices with Vendor ID of 123 and “Balance Due” greater
+than zero.
+ 
+VendorID    TermsID     InvoiceID   InvoiceTotal          CreditTotal           PaymentTotal          Balance Due
+----------- ----------- ----------- --------------------- --------------------- --------------------- ---------------------
+123         3           2           40.20                 0.00                  40.20                 0.00
+123         3           3           138.75                0.00                  138.75                0.00
+123         3           4           144.70                0.00                  144.70                0.00
+123         3           5           15.50                 0.00                  15.50                 0.00
+123         3           6           42.75                 0.00                  42.75                 0.00
+123         3           7           172.50                0.00                  172.50                0.00
+123         3           10          42.67                 0.00                  42.67                 0.00
+123         3           11          42.50                 0.00                  42.50                 0.00
+123         3           17          10.00                 0.00                  10.00                 0.00
+123         3           18          104.00                0.00                  104.00                0.00
+123         3           22          108.25                0.00                  108.25                0.00
+123         3           25          129.00                0.00                  129.00                0.00
+123         3           26          10.00                 0.00                  10.00                 0.00
+123         3           28          109.50                0.00                  109.50                0.00
+123         3           30          63.40                 0.00                  63.40                 0.00
+123         3           34          127.75                0.00                  127.75                0.00
+123         3           37          36.00                 0.00                  36.00                 0.00
+123         3           38          61.50                 0.00                  61.50                 0.00
+123         3           41          53.75                 0.00                  53.75                 0.00
+123         3           42          400.00                0.00                  400.00                0.00
+123         3           48          33.00                 0.00                  33.00                 0.00
+123         3           55          40.75                 0.00                  40.75                 0.00
+123         3           58          53.25                 0.00                  53.25                 0.00
+123         3           59          13.75                 0.00                  13.75                 0.00
+123         3           62          26.75                 0.00                  26.75                 0.00
+123         3           64          23.50                 0.00                  23.50                 0.00
+123         3           66          31.95                 0.00                  31.95                 0.00
+123         3           71          108.50                0.00                  108.50                0.00
+123         3           72          10.00                 0.00                  10.00                 0.00
+123         3           75          27.00                 0.00                  27.00                 0.00
+123         3           76          241.00                0.00                  241.00                0.00
+123         3           81          26.25                 0.00                  26.25                 0.00
+123         3           84          111.00                0.00                  111.00                0.00
+123         3           85          158.00                0.00                  158.00                0.00
+123         3           86          739.20                0.00                  739.20                0.00
+123         3           87          60.00                 0.00                  60.00                 0.00
+123         3           88          147.25                0.00                  147.25                0.00
+123         3           90          38.75                 0.00                  38.75                 0.00
+123         3           93          162.75                0.00                  162.75                0.00
+123         3           94          52.25                 0.00                  0.00                  52.25
+123         3           99          59.97                 0.00                  0.00                  59.97
+123         3           100         67.92                 0.00                  0.00                  67.92
+123         3           101         30.75                 0.00                  0.00                  30.75
+123         3           104         44.44                 0.00                  44.44                 0.00
+123         3           108         67.00                 0.00                  67.00                 0.00
+123         3           111         22.57                 0.00                  22.57                 0.00
+123         3           114         127.75                0.00                  127.75                0.00
+
+(47 rows affected)
+
+List all the columns of the invoice line items with Invoice IDs listed in the
+previous question. Use the IN operator as part of your solution. Do not use
+any quotes in your solution.
+ 
+InvoiceID   InvoiceSequence AccountNo   InvoiceLineItemAmount InvoiceLineItemDescription
+----------- --------------- ----------- --------------------- ----------------------------------------------------------------------------------------------------
+2           1               553         40.20                 Freight
+3           1               553         138.75                Freight
+4           1               553         144.70                Int'l shipment
+5           1               553         15.50                 Freight
+6           1               553         42.75                 Freight
+7           1               553         172.50                Freight
+10          1               553         42.67                 Freight
+11          1               553         42.50                 Freight
+17          1               553         10.00                 Address correction
+18          1               553         104.00                Freight
+22          1               553         108.25                Freight
+25          1               553         129.00                Freight
+26          1               553         10.00                 Freight
+28          1               553         109.50                Freight
+30          1               553         63.40                 Freight
+34          1               553         127.75                Freight
+37          1               553         36.00                 Freight
+38          1               553         61.50                 Freight
+41          1               553         53.75                 Freight
+42          1               553         400.00                Freight
+48          1               553         33.00                 Freight
+55          1               553         40.75                 Freight
+58          1               553         53.25                 Freight
+59          1               553         13.75                 Freight
+62          1               553         26.75                 Freight
+64          1               553         23.50                 Freight
+66          1               553         31.95                 Freight
+71          1               553         108.50                Freight
+72          1               553         10.00                 Address correction
+75          1               553         27.00                 Freight
+76          1               553         241.00                Int'l shipment
+81          1               553         26.25                 Freight
+84          1               553         111.00                Freight
+85          1               553         158.00                Int'l shipment
+86          1               553         739.20                Freight
+87          1               553         60.00                 Freight
+88          1               553         147.25                Freight
+90          1               553         38.75                 Freight
+93          1               553         162.75                International shipment
+94          1               553         52.25                 Freight
+99          1               553         59.97                 Freight
+100         1               553         67.92                 Freight
+101         1               553         30.75                 Freight
+104         1               553         44.44                 Freight
+108         1               553         67.00                 Freight
+111         1               553         22.57                 Freight
+114         1               553         127.75                Freight
+
+(47 rows affected)
+
+List the Vendor State and Vendor Contact First Name columns, followed by
+6 columns using the following string functions with the Vendor Contact First
+Name as the argument: LEN(), LOWER(), UPPER(),LEFT(), RIGHT(), and
+TRIM() for vendors from Florida (FL) or Texas (TX). Do not use the IN
+operator as part of your solution.
+ 
+VendorState VendorContactFName                                 LengtofTheName LowerCase                                          UpperCase                                          LeftSide RightSide Trim
+----------- -------------------------------------------------- -------------- -------------------------------------------------- -------------------------------------------------- -------- --------- --------------------------------------------------
+FL          Kristofer                                          9              kristofer                                          KRISTOFER                                          Kri      fer       Kristofer
+TX          Trey                                               4              trey                                               TREY                                               Tre      rey       Trey
+
+(2 rows affected)
+
+List the 3 columns (Invoice Number, Invoice Date, and Invoice Total) for
+invoices with Invoice Date of January 8, 2020. You must use the MONTH(),
+DAY() and YEAR() functions in your WHERE clause.
+ 
+InvoiceNumber                                      InvoiceDate InvoiceTotal
+-------------------------------------------------- ----------- -------------
+963253244                                          2020-01-08  $       60.00
+963253239                                          2020-01-08  $      147.25
+
+(2 rows affected)
+
+
+Completion time: 2023-01-16T13:42:29.8001710-05:00
