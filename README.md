@@ -1,4 +1,4 @@
-# AP Database SQL Exercise README
+# Use_AP_Part-1_SQL
 
 This README.md file provides a brief overview of the SQL script `ex1_AP.sql`, detailing the exercises and queries it contains for the AP database.
 
